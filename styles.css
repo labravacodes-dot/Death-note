@@ -1,0 +1,306 @@
+:root {
+    --dn-black: #0a0a0a;
+    --dn-dark-card: #141212;
+    --dn-border: #f0e6d2;
+    --parchment: #d9d2c1;
+    --text-dark: #1a1a1a;
+    --accent-red: #8b0000;
+    --gold-thread: #8a7343;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--dn-black);
+    color: var(--parchment);
+    font-family: 'Courier Prime', monospace;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.notebook-wrapper {
+    width: 100%;
+    max-width: 650px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* PAGE DISPLAY MECHANICS */
+.page {
+    display: none;
+    width: 100%;
+    animation: pageTurn 0.4s ease-in-out forwards;
+}
+
+.page.active {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes pageTurn {
+    from { opacity: 0; transform: translateX(15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* COVER STYLING */
+.cover-page {
+    align-items: center;
+}
+
+.dn-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dn-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    letter-spacing: 10px;
+    color: var(--dn-border);
+    margin-bottom: 6px;
+}
+
+.dn-header p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.cover-card {
+    width: 100%;
+    background: linear-gradient(135deg, #1c1817 0%, var(--dn-dark-card) 100%);
+    border: 3px solid var(--dn-border);
+    border-radius: 4px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9), inset 0 0 30px rgba(0,0,0,0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.subtitle-jp {
+    font-size: 0.9rem;
+    color: #888;
+    letter-spacing: 4px;
+}
+
+.cover-card h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--dn-border);
+}
+
+.edition-no {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold-thread);
+    margin-bottom: 10px;
+}
+
+.property-owner {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* INTERIOR PAGES STYLING */
+.interior-page {
+    background-color: var(--parchment);
+    color: var(--text-dark);
+    border-radius: 4px;
+    padding: 35px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.9);
+    border-left: 20px solid #1a1615;
+    min-height: 600px;
+    justify-content: space-between;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+}
+
+.page-num {
+    color: var(--accent-red);
+    font-size: 0.85rem;
+}
+
+/* LORE & RULES */
+.lore-box h2, .rules-box h2, .entry-form h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--accent-red);
+    margin-bottom: 12px;
+}
+
+.lore-box p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+.rules-list {
+    margin-left: 20px;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.rules-list li {
+    margin-bottom: 8px;
+}
+
+/* FORM & LEDGER TABLE */
+.entry-form {
+    background: rgba(0,0,0,0.04);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid #c4b9a3;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 9px 12px;
+    background: #fff;
+    border: 1px solid #888;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.95rem;
+    border-radius: 3px;
+}
+
+.btn-write {
+    background-color: #1a1a1a;
+    color: var(--parchment);
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-write:hover {
+    background-color: var(--accent-red);
+}
+
+.names-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.names-table th, .names-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #b5a892;
+    font-size: 0.88rem;
+}
+
+.names-table th {
+    font-family: 'Cinzel', serif;
+    background: rgba(0,0,0,0.08);
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.status-active {
+    background: rgba(139, 0, 0, 0.15);
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+}
+
+.status-expired {
+    background: rgba(50, 50, 50, 0.2);
+    color: #555;
+    text-decoration: line-through;
+}
+
+/* NAVIGATION CONTROLS */
+.nav-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #b5a892;
+}
+
+.btn-nav {
+    background-color: #1a1a1a;
+    color: var(--parchment);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-nav:hover {
+    background-color: var(--accent-red);
+}
+
+.shinigami-footer {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 15px;
+}
+/* Looming Shinigami Silhouette Background */
+.shinigami-silhouette {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0; /* Sits behind the notebook wrapper */
+    opacity: 0.25; /* Semi-transparent dark shadow */
+    overflow: hidden;
+}
+
+.notebook-wrapper {
+    z-index: 10; /* Ensures the notebook stays clearly on top */
+}

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEATH NOTE - Human World Ledger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="notebook-wrapper">
+
+        <!-- PAGE 0: COVER -->
+        <div id="page-0" class="page active cover-page">
+            <div class="dn-header">
+                <h2>D E A T H   N O T E</h2>
+                <p>SHINIGAMI REALM / HUMAN WORLD LEDGER</p>
+            </div>
+            
+            <div class="cover-card">
+                <p class="subtitle-jp">人間界のデスノート</p>
+                <h1>DEATH NOTE</h1>
+                <p class="edition-no">No. 13 [Repaired Edition]</p>
+                <p class="property-owner">PROPERTY OF: SHINIGAMI REALM</p>
+                
+                <button class="btn-nav" onclick="goToPage(1)">
+                    OPEN NOTEBOOK 📖
+                </button>
+            </div>
+        </div>
+
+        <!-- PAGE 1: IN-UNIVERSE MESSAGE -->
+        <div id="page-1" class="page interior-page">
+            <div class="page-header">
+                <span>TO WHOM FINDS THIS LEDGER</span>
+                <span class="page-num">PAGE 1</span>
+            </div>
+
+            <div class="lore-box">
+                <h2>A Message to the Finder</h2>
+                <p>Do not be deceived by its ordinary appearance. You hold in your hands a notebook born from the Shinigami realm—a ledger capable of ending any human life simply by inscribing their name upon these pages.</p>
+                <p>These instructions were intentionally written in <strong>English</strong> because it is the most popular and widely understood language in your world. There was no room for misunderstanding. The power inside this note is real, absolute, and immediate.</p>
+                <p>If you possess the courage—or the malice—turn the page, claim ownership, study the absolute laws, and test it for yourself.</p>
+            </div>
+
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(0)">← Cover</button>
+                <button class="btn-nav" onclick="goToPage(2)">Page 2 (Claim Ownership) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 2: HUMAN OWNER REGISTRATION -->
+        <div id="page-2" class="page interior-page">
+            <div class="page-header">
+                <span>HUMAN WORLD REGISTRATION</span>
+                <span class="page-num">PAGE 2</span>
+            </div>
+
+            <div class="entry-form">
+                <h2>Bind Your Name to the Ledger</h2>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #555;">Inscribe your name below to officially claim ownership of this Death Note. Once bound, you accept all consequences under Shinigami law.</p>
+                
+                <div class="form-group">
+                    <label for="ownerName">Human Owner's Name</label>
+                    <input type="text" id="ownerName" class="form-control" placeholder="e.g., Light Yagami">
+                </div>
+                <button class="btn-write" id="claimOwnershipBtn">Sign & Claim Ownership</button>
+                
+                <div id="ownershipStatus" style="margin-top: 15px; font-weight: bold; color: var(--accent-red);"></div>
+            </div>
+
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(1)">← Page 1 (Message)</button>
+                <button class="btn-nav" onclick="goToPage(3)">Page 3 (Rules I) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 3: RULES I -->
+        <div id="page-3" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: I</span>
+                <span class="page-num">PAGE 3</span>
+            </div>
+            <div class="rules-box">
+                <h2>I</h2>
+                <ul class="rules-list">
+                    <li>The human whose name is written in this note shall die.</li>
+                    <li>This note will not take effect unless the writer has the person's face in their mind when writing their name. Therefore, people sharing the same name will not be affected.</li>
+                    <li>If the cause of death is written within 40 seconds of writing the person's name, it will happen.</li>
+                    <li>If no cause of death is specified, the person will simply die of a heart attack.</li>
+                    <li>After writing the cause of death, details of the death should be written in the next 6 minutes and 40 seconds.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(2)">← Page 2 (Owner)</button>
+                <button class="btn-nav" onclick="goToPage(4)">Page 4 (Rules II) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 4: RULES II -->
+        <div id="page-4" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: II</span>
+                <span class="page-num">PAGE 4</span>
+            </div>
+            <div class="rules-box">
+                <h2>II</h2>
+                <ul class="rules-list">
+                    <li>This note shall become the property of the human world, once it touches the ground of the human world.</li>
+                    <li>The owner of the note can recognize the image and voice of its original owner, a Shinigami.</li>
+                    <li>The human who uses this note can neither go to Heaven nor Hell.</li>
+                    <li>If the time of death is written within 40 seconds after writing the cause of death as a heart attack, the time of death can be manipulated.</li>
+                    <li>The Death Note's power will take effect on any torn piece or scrap of a page.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(3)">← Page 3</button>
+                <button class="btn-nav" onclick="goToPage(5)">Page 5 (Rules III) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 5: RULES III -->
+        <div id="page-5" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: III</span>
+                <span class="page-num">PAGE 5</span>
+            </div>
+            <div class="rules-box">
+                <h2>III</h2>
+                <ul class="rules-list">
+                    <li>As long as the name is written on a page or piece of paper, the instrument used to write does not matter (pen, pencil, blood).</li>
+                    <li>A person who gains the Shinigami Eyes can see a human's name and remaining life span just by looking at their face.</li>
+                    <li>The price for obtaining the Shinigami Eyes is half of the person's remaining life span.</li>
+                    <li>If a Death Note owner accidentally misspells a target's name four times, that target becomes permanently immune to being killed by that note.</li>
+                    <li>If a Death Note owner intentionally misspells a name four times to save a target, the owner will instantly die instead.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(4)">← Page 4</button>
+                <button class="btn-nav" onclick="goToPage(6)">Page 6 (Rules IV) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 6: RULES IV -->
+        <div id="page-6" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: IV</span>
+                <span class="page-num">PAGE 6</span>
+            </div>
+            <div class="rules-box">
+                <h2>IV</h2>
+                <ul class="rules-list">
+                    <li>Suicide is a valid cause of death. Essentially, all humans are thought to possess the possibility to commit suicide.</li>
+                    <li>If two or more Death Notes are used to write the same name within 0.06 seconds, the entries cancel each other out and the target will not die.</li>
+                    <li>If a target's remaining lifespan is less than 12 minutes, or if they are older than 124 years, the Death Note cannot take their life.</li>
+                    <li>Giving up ownership of the Death Note strips away all associated memories of it.</li>
+                    <li>Your memories of the Death Note will return only if you physically touch the notebook again.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(5)">← Page 5</button>
+                <button class="btn-nav" onclick="goToPage(7)">Page 7 (Rules V) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 7: RULES V -->
+        <div id="page-7" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: V</span>
+                <span class="page-num">PAGE 7</span>
+            </div>
+            <div class="rules-box">
+                <h2>V</h2>
+                <ul class="rules-list">
+                    <li>A Shinigami can never die, even if stabbed in the heart with a knife or shot through the head with a gun.</li>
+                    <li>However, there are ways to kill a Shinigami, which are generally unknown to the Shinigami themselves.</li>
+                    <li>The conditions for a Shinigami to extend their life involve writing human names in their own Death Note.</li>
+                    <li>If a Shinigami decides to use the Death Note to kill a human out of love or to save them, the Shinigami will disintegrate and die.</li>
+                    <li>The human who was saved by this act inherits the remaining lifespan of the deceased Shinigami.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(6)">← Page 6</button>
+                <button class="btn-nav" onclick="goToPage(8)">Page 8 (Rules VI) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 8: RULES VI -->
+        <div id="page-8" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: VI</span>
+                <span class="page-num">PAGE 8</span>
+            </div>
+            <div class="rules-box">
+                <h2>VI</h2>
+                <ul class="rules-list">
+                    <li>Lending or trading the Death Note between humans is permitted as long as ownership is formally transferred.</li>
+                    <li>The number of pages in the Death Note will never run out; they are infinite.</li>
+                    <li>If the owner loses the Death Note or it is stolen, ownership is automatically forfeited after 49 days if not recovered.</li>
+                    <li>A Shinigami must always accompany the human who possesses their notebook in the human world.</li>
+                    <li>All rules established within this ledger constitute the absolute decree of the Shinigami King.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(7)">← Page 7</button>
+                <button class="btn-nav" onclick="goToPage(9)">Page 9 (Rules VII) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 9: RULES VII -->
+        <div id="page-9" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: VII</span>
+                <span class="page-num">PAGE 9</span>
+            </div>
+            <div class="rules-box">
+                <h2>VII</h2>
+                <ul class="rules-list">
+                    <li>A human cannot use a Death Note if they are less than 6 years old in human chronology.</li>
+                    <li>If a notebook is owned by multiple humans simultaneously, any owner can write in it and execute targets.</li>
+                    <li>When writing multiple names on the same page, if the causes of death are identical, they execute concurrently.</li>
+                    <li>If different causes are written for different names on the same page, execution proceeds in order of writing time.</li>
+                    <li>A death condition cannot involve shortening another completely unrelated person's natural lifespan beyond their own.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(8)">← Page 8</button>
+                <button class="btn-nav" onclick="goToPage(10)">Page 10 (Rules VIII) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 10: RULES VIII -->
+        <div id="page-10" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: VIII</span>
+                <span class="page-num">PAGE 10</span>
+            </div>
+            <div class="rules-box">
+                <h2>VIII</h2>
+                <ul class="rules-list">
+                    <li>A Shinigami may possess up to two Death Notes at a time in the human world, but must return one upon request.</li>
+                    <li>If a human drops their Death Note and loses possession, they lose all memory of it instantly.</li>
+                    <li>If another human picks up the dropped notebook, that new human gains full ownership and memories.</li>
+                    <li>A Shinigami cannot reveal the true name or lifespan of any human to anyone, including their notebook owner.</li>
+                    <li>The bargain for the Shinigami Eyes is permanent and cannot be refunded or undone by the Shinigami King.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(9)">← Page 9</button>
+                <button class="btn-nav" onclick="goToPage(11)">Page 11 (Rules IX) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 11: RULES IX -->
+        <div id="page-11" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: IX</span>
+                <span class="page-num">PAGE 11</span>
+            </div>
+            <div class="rules-box">
+                <h2>IX</h2>
+                <ul class="rules-list">
+                    <li>Photocopies, digital scans, or digital photographs of Death Note pages hold zero supernatural power.</li>
+                    <li>Writing on a digital screen or typed document emulating the notebook will cause no effect whatsoever.</li>
+                    <li>If a page is completely filled with writing, the Shinigami can provide additional blank sheets upon request.</li>
+                    <li>A human owner may pass their notebook to a subordinate, provided ownership guidelines are strictly observed.</li>
+                    <li>Using a pseudonym or fake stage name will not work; the target's true birth name must be inscribed.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(10)">← Page 10</button>
+                <button class="btn-nav" onclick="goToPage(12)">Page 12 (Rules X) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 12: RULES X -->
+        <div id="page-12" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: X</span>
+                <span class="page-num">PAGE 12</span>
+            </div>
+            <div class="rules-box">
+                <h2>X</h2>
+                <ul class="rules-list">
+                    <li>If a person dies due to the Death Note, their death certificate will officially record a natural or accidental cause.</li>
+                    <li>No human authority or forensic investigator can trace a Death Note heart attack back to supernatural causes.</li>
+                    <li>A Shinigami is forbidden from eating anything other than apples from the human world without facing realm penalties.</li>
+                    <li>Apples in the human world provide Shinigami with an addictive, hallucinatory sensation of crisp satisfaction.</li>
+                    <li>The realm rules are absolute and binding across both the human world and the dimension of the dead.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(11)">← Page 11</button>
+                <button class="btn-nav" onclick="goToPage(13)">Page 13 (Rules XI) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 13: RULES XI -->
+        <div id="page-13" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: XI</span>
+                <span class="page-num">PAGE 13</span>
+            </div>
+            <div class="rules-box">
+                <h2>XI</h2>
+                <ul class="rules-list">
+                    <li>The final authority on all disputes regarding Death Note ownership rests solely with the King of the Shinigami.</li>
+                    <li>Any attempt to deceive the Shinigami King regarding notebook usage results in immediate execution in the nether realm.</li>
+                    <li>Shinigami must keep written records of human deaths to maintain balance in the underworld archives.</li>
+                    <li>If a human uses the notebook for financial gain alone, the Shinigami realm applies strict karmic taxes.</li>
+                    <li>The possession of multiple notebooks by a single mortal amplifies the psychological burden exponentially.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(12)">← Page 12</button>
+                <button class="btn-nav" onclick="goToPage(14)">Page 14 (Rules XII) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 14: RULES XII -->
+        <div id="page-14" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: XII</span>
+                <span class="page-num">PAGE 14</span>
+            </div>
+            <div class="rules-box">
+                <h2>XII</h2>
+                <ul class="rules-list">
+                    <li>This ledger, marked as Edition No. 13, represents the complete accumulated codex of human-realm instructions.</li>
+                    <li>Study these laws carefully before inscribing any name upon the pages that follow.</li>
+                    <li>Once an entry is logged in the human world ledger, it cannot be undone by any mortal hands.</li>
+                    <li>Turn the page to review final decrees before execution.</li>
+                    <li>May your judgment be swift and absolute.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(13)">← Page 13</button>
+                <button class="btn-nav" onclick="goToPage(15)">Page 15 (Rules XIII) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 15: RULES XIII (FINAL RULE PAGE) -->
+        <div id="page-15" class="page interior-page">
+            <div class="page-header">
+                <span>HOW TO USE IT: XIII</span>
+                <span class="page-num">PAGE 15</span>
+            </div>
+            <div class="rules-box">
+                <h2>XIII</h2>
+                <ul class="rules-list">
+                    <li>The rules of the Death Note cannot be altered, bypassed, or rewritten by any mortal or Shinigami.</li>
+                    <li>Should the notebook ever be destroyed or lost forever, its lingering supernatural signature remains bound to its owner.</li>
+                    <li>All instructions are finalized in this codex. Turn the page to begin recording entries in the human world ledger.</li>
+                    <li>Proceed with absolute caution. There is no turning back once a name is inscribed.</li>
+                    <li>The final page of instructions concludes here.</li>
+                </ul>
+            </div>
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(14)">← Page 14</button>
+                <button class="btn-nav" onclick="goToPage(16)">Page 16 (Write Entry) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 16: WRITE ENTRY FORM -->
+        <div id="page-16" class="page interior-page">
+            <div class="page-header">
+                <span>EXECUTION ENTRY</span>
+                <span class="page-num">PAGE 16</span>
+            </div>
+
+            <div class="entry-form">
+                <h2>Record a Name</h2>
+                <div class="form-group">
+                    <label for="targetName">Target's Full Name</label>
+                    <input type="text" id="targetName" class="form-control" placeholder="e.g., John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="causeOfDeath">Cause of Death (Blank = Heart Attack)</label>
+                    <input type="text" id="causeOfDeath" class="form-control" placeholder="e.g., Sudden accident, cardiac arrest...">
+                </div>
+                <button class="btn-write" id="writeNameBtn">Write Name in Note</button>
+            </div>
+
+            <div class="nav-controls">
+                <button class="btn-nav" onclick="goToPage(15)">← Page 15 (Rules)</button>
+                <button class="btn-nav" onclick="goToPage(17)">Page 17 (Ledger) →</button>
+            </div>
+        </div>
+
+        <!-- PAGE 17: THE LEDGER LOG (DYNAMIC PAGES 17+ CREATED HERE) -->
+        <div id="page-17" class="page interior-page">
+            <div class="page-header">
+                <span>DEATH NOTE LEDGER & EXECUTION RESULTS</span>
+                <span class="page-num">PAGE 17</span>
+            </div>
+
+            <div class="names-list">
+                <table class="names-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cause / Effect</th>
+                            <th>Status / Countdown</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ledgerTableBody">
+                        <!-- Dynamic entries -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="shinigami-footer">
+                <span id="displayOwner">Current Owner: Unclaimed</span> — Ryuk is watching over your entries.
+            </div>
+
+            <div class="nav-controls" id="ledgerNavControls">
+                <button class="btn-nav" onclick="goToPage(16)">← Page 16 (Write)</button>
+                <button class="btn-nav" onclick="goToPage(0)">Return to Cover ↺</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LOOMING SHINIGAMI SILHOUETTE COMPANION -->
+    <div class="shinigami-silhouette">
+        <svg viewBox="0 0 200 400" width="100%" height="100%" preserveAspectRatio="xMaxYMid slice">
+            <!-- Looming Spiky Head & Hair Silhouette -->
+            <path d="M 80 80 L 50 20 L 100 50 L 140 10 L 170 45 L 200 15 L 180 90 Z" fill="#050505" />
+            <!-- Tall Gaunt Head Profile -->
+            <path d="M 90 60 Q 70 50 130 50 Q 180 50 170 120 L 180 220 Q 170 280 130 290 Q 90 280 85 220 Z" fill="#0d0d0d" />
+            <!-- Hollow Glowing Eyes -->
+            <ellipse cx="115" cy="110" rx="6" ry="10" fill="#ffd700" opacity="0.8" />
+            <ellipse cx="150" cy="110" rx="6" ry="10" fill="#ffd700" opacity="0.8" />
+            <!-- Spiky Feathered Collar Looming From Behind -->
+            <path d="M 60 250 L 30 320 L 90 290 L 135 340 L 180 290 L 220 320 L 190 250 Z" fill="#080808" />
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- SPEECH BUBBLE (Tucked discreetly near the top right) -->
+    <div class="chibi-ryuk-container">
+        <div class="chibi-speech-bubble" id="ryukSpeech" style="display: none;">
+            "..."
+        </div>
+    <!-- BGM Audio Player -->
+    <audio id="bgmAudio" loop>
+        <source src="deathnote.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="btn-nav" id="musicToggleBtn" onclick="toggleBGM()" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; font-size: 0.8rem; padding: 8px 12px;">
+        ♫ Play Opening Theme
+    </button>
+
+    <script src="script.js"></script>
+
+</html>
+</body>
