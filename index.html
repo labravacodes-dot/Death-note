@@ -388,7 +388,7 @@
             </div>
         </div>
 
-        <!-- PAGE 17: THE LEDGER LOG (DYNAMIC PAGES 17+ CREATED HERE) -->
+        <!-- PAGE 17: THE LEDGER LOG -->
         <div id="page-17" class="page interior-page">
             <div class="page-header">
                 <span>DEATH NOTE LEDGER & EXECUTION RESULTS</span>
@@ -437,22 +437,24 @@
         </svg>
     </div>
 
-    <script src="script.js"></script>
-    <!-- SPEECH BUBBLE (Tucked discreetly near the top right) -->
+    <!-- SPEECH BUBBLE -->
     <div class="chibi-ryuk-container">
         <div class="chibi-speech-bubble" id="ryukSpeech" style="display: none;">
             "..."
         </div>
-    <!-- BGM Audio Player -->
-    <audio id="bgmAudio" loop>
-        <source src="deathnote.mp3" type="audio/mpeg">
-    </audio>
+    </div>
 
-    <button class="btn-nav" id="musicToggleBtn" onclick="toggleBGM()" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; font-size: 0.8rem; padding: 8px 12px;">
-        ♫ Play Opening Theme
-    </button>
+    <!-- GLOBAL BACKGROUND MUSIC PLAYER ("THE WORLD") -->
+    <div id="global-bg-music" class="bg-music-bar">
+        <div class="music-info">
+            <span class="music-icon">🎵</span>
+            <span class="music-title">NOW PLAYING: DEATH NOTE THEME</span>
+        </div>
+        <div class="bg-player-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/EtGhFQ88mjc?si=YWk0oHW1GFJ8jNuZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-
-</html>
 </body>
+</html>
